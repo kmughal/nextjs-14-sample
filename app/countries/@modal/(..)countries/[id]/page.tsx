@@ -4,6 +4,7 @@ import data from "../../../data/index.json";
 import Image from "next/image";
 import { useState } from "react";
 
+
 export default function CountryModal({ params }: { params: { id: string } }) {
     const [isOpen, setIsOpen] = useState(true);
     const search = data.find((c) => c.id === params.id);

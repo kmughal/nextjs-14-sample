@@ -1,3 +1,8 @@
+export const metadata = {
+    title : 'Docs Page',
+    description: 'This is a docs page'
+}
+
 export default function DocsPage({ params }: { params: { slugs: string[] } }) {
 
     return <p>
