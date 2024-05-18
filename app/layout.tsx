@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,27 +19,29 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={inter.className + " container"}>
-        <header>
-          <h1 className="content-center text-xl">Next JS 14</h1>
-          <nav>
-            <ul className="flex">
-              <li className="mr-4">
-                <Link href="/books/new-book">New Book</Link>
-              </li>
-              <li className="mr-4">
-                <Link href="/docs/registration-form/apply">Documents</Link>
-              </li>
-              <li className="mr-4">
-                <Link href="/countries">Countries</Link>
-              </li>
-              <li className="mr-4">
-              <Link href="/stocks">Stocks</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        {children}</body>
+      <ThemeProvider>
+        <body className={inter.className + " container"}>
+          <header>
+            <h1 className="content-center text-xl">Next JS 14</h1>
+            <nav>
+              <ul className="flex">
+                <li className="mr-4">
+                  <Link href="/books/new-book">New Book</Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/docs/registration-form/apply">Documents</Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/countries">Countries</Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/stocks">Stocks</Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          {children}</body>
+      </ThemeProvider>
     </html>
   );
 }
